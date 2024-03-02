@@ -14,7 +14,7 @@ public class UserController {
 
     private final UserService userService;
 
-    @PostMapping
+    @PostMapping("")
     public Mono<UserResponse> createUser(@RequestBody UserCreateRequest userCreateRequest) {
         return userService.create(userCreateRequest.getName(), userCreateRequest.getEmail())
                 .map(UserResponse::fromUser);
