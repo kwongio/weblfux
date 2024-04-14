@@ -1,4 +1,4 @@
-package org.example.weblfux.controller;
+package org.example.weblfux.user.controller;
 
 import lombok.Data;
 

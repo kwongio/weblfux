@@ -1,8 +1,8 @@
-package org.example.weblfux.service;
+package org.example.weblfux.user.service;
 
 import lombok.RequiredArgsConstructor;
-import org.example.weblfux.model.User;
-import org.example.weblfux.model.UserRepository;
+import org.example.weblfux.user.domain.User;
+import org.example.weblfux.user.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -28,16 +28,5 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    public Mono<Integer> deleteById(Long id) {
-        return userRepository.deleteById(id);
-    }
 
-    public Mono<User> update(Long id, String name, String email) {
-        return userRepository.findById(id)
-                .flatMap(user -> {
-                    user.setName(name);
-                    user.setEmail(email);
-                    return userRepository.save(user);
-                });
-    }
 }

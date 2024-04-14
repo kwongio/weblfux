@@ -1,13 +1,15 @@
-package org.example.weblfux.controller;
+package org.example.weblfux.user.controller;
 
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@Data
+
+@Getter
+@NoArgsConstructor
 @AllArgsConstructor
 public class UserCreateRequest {
-
     private String name;
     private String email;
 }
